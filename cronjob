@@ -1,0 +1,1 @@
+0 * * * * root cd /home/<user>/temp-stats; docker run -w /usr/workspace -v $(pwd):/usr/workspace atrea-temp-stats:1.0.1 python read_temp.py
