@@ -1,6 +1,6 @@
-# ATREA Temp stats
+# ATREA RA5 Temp stats
 
-Python script to tead temp values from ATREA unit and upload to MySQL DB </br> </br>
+Python script to tead temp values from ATREA RA5 recuperation unit and upload to MySQL DB </br> </br>
 
 ## Prerequisites
 To use atrea temp stats, you need first a `secrets.py` file with following content:
@@ -11,9 +11,10 @@ DB_PASS="<pass>"
 DB_NAME="<name>"
 DB_HOST="<host>"
 ```
-
-also change the IP of your local ATREA unit in read_temp.py file on line 27.
-
+</br>
+- make sure, python 3.x is installed </br>
+- also change variables in file `read_temp.py`</br>
+</br>
 
 ## Docker Version
 
@@ -35,6 +36,7 @@ prerequisites:
 
 
 1. install mysql connector:
+(install it as standard user, not root)
 ```
 pip install mysql-connector-python-rf
 ```
