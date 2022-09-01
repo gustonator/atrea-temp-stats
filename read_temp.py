@@ -30,7 +30,7 @@ d = webdriver.Chrome('/usr/local/bin/chromedriver',options=chrome_options)
 d.get(ATREA_UNIT_URL)
 
 # wait up to seconds for the elements to become available
-d.implicitly_wait(1)
+d.implicitly_wait(5)
 
 # send the password
 element = d.find_element_by_xpath("//input[1]");
