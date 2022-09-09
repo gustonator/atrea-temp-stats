@@ -3,6 +3,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import os, mysql.connector, time
 import secrets
+import socket
+import urllib.request
 
 #--- Edit variables below --------
 INSIDE_DATATYPE = "inside_temp"
@@ -69,3 +71,6 @@ mycursor.execute(sql, val)
 mydb.commit()
 print(mycursor.rowcount, "record inserted.")
 
+# send notification to Healthchecks.io
+if secrets.HEALTHCHECK_ENABLED:
+    urllib.request.urlopen("https://hc-ping.com/"+secrets.HEALTHCHECK_UID, timeout=10)
